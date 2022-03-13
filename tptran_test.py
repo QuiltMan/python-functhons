@@ -39,7 +39,15 @@ x = dx*(np.linspace(0, nx-1, nx))
 xs=(nx/2)*dx
 xoff=x-xs
 p_num=trace_num*4+1
-stp, tau=tptran(wave,t, xoff, pmin, pmax, dp, p_num)
 
+stp, tau, p=tptran(wave,t, xoff, pmin, pmax, dp, p_num)
 
-stp
+################
+xmin=xoff[0]
+xmax=xoff[len(xoff)-1]
+dx=2*(xmax-xmin)/(len(p)-1);
+################
+
+seis, it, ix=itptran(stp,tau, p, xmin, xmax, dx)
+
+seis
