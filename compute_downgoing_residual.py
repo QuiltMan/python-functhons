@@ -3,14 +3,9 @@ def compute_downgoing_residual(residual, dobs, dsyn):
     dsyn_np=np.zeros((len(dsyn.data),len(dsyn.data[0])))
     dobs_np=np.zeros((len(dobs.data),len(dobs.data[0])))
     
-    for xx in range(len(dsyn.data)):
-        for yy in range(len(dsyn.data[0])):
-            dsyn_np[xx][yy]=dsyn.data[xx][yy]
+    dsyn_np=np.array(dsyn.data[:])
+    dobs_np=np.array(dobs.data[:])
     
-    for xx in range(len(dobs.data)):
-        for yy in range(len(dobs.data[0])):
-            dobs_np[xx][yy]=dobs.data[xx][yy]            
-            
     ######PARAMETERS#########
     nx=101;
     nt=573;
