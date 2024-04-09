@@ -30,6 +30,8 @@ pmax=-pmin
 trace_num=len(wave)
 sample_num=len(wave[0])
 
+
+
 dp=.25*(pmax-pmin)/trace_num
 
 nx=3
